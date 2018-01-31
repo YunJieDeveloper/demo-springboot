@@ -40,4 +40,7 @@ public class Bean {
     public void setCreatTime(Date creatTime) {
         this.creatTime = creatTime;
     }
+
+
+
 }

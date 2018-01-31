@@ -1,0 +1,151 @@
+<html>
+<head>
+    <title>数据校验监控</title>
+    <style type="text/css">
+        body {
+            border-collapse:collapse;
+            width: 100%;
+            margin: 40px auto;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            color: #444;
+        }
+        table {
+            *border-collapse: collapse; /* IE7 and lower */
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .bordered {
+            border-collapse:collapse;
+            border: solid #ccc 1px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            -webkit-box-shadow: 0 0px 0px #ccc;
+            -moz-box-shadow: 0 0px 0px #ccc;
+            box-shadow: 0 0px 0px #ccc;
+        }
+
+        .bordered tr:hover {
+            border-collapse:collapse;
+            background: #fbf8e9;
+            -o-transition: all 0.1s ease-in-out;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .bordered td, .bordered th {
+            border-collapse:collapse;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .bordered th {
+            border-collapse:collapse;
+            font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            background-color: #dce9f9;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            -webkit-box-shadow: 0 0px 0 rgba(255,255,255,.8) inset;
+            -moz-box-shadow:0 0px 0 rgba(255,255,255,.8) inset;
+            box-shadow: 0 0px 0 rgba(255,255,255,.8) inset;
+            text-shadow: 0 0px 0 rgba(255,255,255,.8);
+        }
+
+        .bordered td:first-child, .bordered th:first-child {
+            font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            border-collapse:collapse;
+            border-left: 1px solid #ccc;
+        }
+
+        .bordered th:first-child {
+            border-collapse:collapse;
+            -moz-border-radius: 1px 0 0 0;
+            -webkit-border-radius: 1px 0 0 0;
+            border-radius: 1px 0 0 0;
+        }
+
+        .bordered th:last-child {
+            border-collapse:collapse;
+            -moz-border-radius: 0 1px 0 0;
+            -webkit-border-radius: 0 1px 0 0;
+            border-radius: 0 1px 0 0;
+        }
+
+        .bordered th:only-child{
+            border-collapse:collapse;
+            -moz-border-radius: 1px 1px 0 0;
+            -webkit-border-radius: 1px 1px 0 0;
+            border-radius: 1px 1px 0 0;
+        }
+
+        .bordered tr:last-child td:first-child {
+            border-collapse:collapse;
+            -moz-border-radius: 0 0 0 1px;
+            -webkit-border-radius: 0 0 0 1px;
+            border-radius: 0 0 0 1px;
+        }
+
+        .bordered tr:last-child td:last-child {
+            border-collapse:collapse;
+            -moz-border-radius: 0 0 1px 0;
+            -webkit-border-radius: 0 0 1px 0;
+            border-radius: 0 0 1px 0;
+        }
+
+        td.alt {
+            background: #F5FAFA;
+            color: #797268;
+        }
+    </style>
+</head>
+<body>
+<table class="bordered">
+    <tr>
+        <th colspan="16"><h1>数据校验统计</h1>($!startTime ~ $!finshTime)</th>
+    </tr>
+    <tr>
+        <th rowspan="2">序号</th>
+        <th rowspan="2">运营商</th>
+        <th rowspan="2">省份</th>
+        <th rowspan="2">通道</th>
+        <th rowspan="2">手机号码</th>
+        <th rowspan="2">租户ID</th>
+        <th rowspan="2">账单月份</th>
+        <th colspan="7">异常</th>
+    </tr>
+    <tr>
+        <th rowspan="1">基本信息</th>
+        <th rowspan="1">账单详情</th>
+        <th rowspan="1">通话详单</th>
+        <th rowspan="1">短信详单</th>
+        <th rowspan="1">套餐详情</th>
+        <th rowspan="1">充值详情</th>
+        <th rowspan="1">流量详单</th>
+
+    </tr>
+    #foreach($info in $!{infos})
+        <tr>
+            <td class="spec">$!velocityCount</td>
+            <td>$!info.carrier</td>
+            <td>$!info.province</td>
+            <td>$!info.channel</td>
+            <td>$!info.mobile</td>
+            <td>$!info.tenantId</td>
+            <td>$!info.billMonth</td>
+            <td>$!info.basicErrors</td>
+            <td>$!info.billErrors</td>
+            <td>$!info.callErrors</td>
+            <td>$!info.smsErrors</td>
+            <td>$!info.packageErrors</td>
+            <td>$!info.rechargeErrors</td>
+            <td>$!info.flowErrors</td>
+        </tr>
+    #end
+</table>
+</body>
+</html>

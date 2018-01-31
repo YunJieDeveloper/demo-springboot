@@ -7,6 +7,7 @@
 		<groupId>com.demo.springboot</groupId>
 		<artifactId>demo-springboot</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>com.demo.springboot</groupId>
 	<artifactId>demo-springboot-server</artifactId>
@@ -22,26 +23,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<!--排除springboot工程中日志依赖，以免产生冲突-->
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-			</exclusions>
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!--common-->
-		<dependency>
-			<groupId>com.demo.springboot</groupId>
-			<artifactId>demo-springboot-common</artifactId>
-		</dependency>
-
 
 		<!--lombok插件-->
 		<dependency>
@@ -78,7 +66,76 @@
 			<version>1.2</version>
 		</dependency>
 
-	</dependencies>
+		<!-- joda-time日期工具包 -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+
+		<!-- 邮件发送 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<!-- 谷歌开源工具包 -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<!-- velocity模板 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-velocity</artifactId>
+			<!-- springboot 1.5.X版本之后不再支持velocity,需要自定义版本依赖 -->
+			<version>1.2.2.RELEASE</version>
+		</dependency>
+
+		<!-- validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+
+		<!-- swaggerUI 整合-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+		</dependency>
+       <!--兄弟模块 common-->
+		<dependency>
+			<groupId>com.demo.springboot</groupId>
+			<artifactId>demo-springboot-common</artifactId>
+		</dependency>
+
+
+		<!-- retrofit2 + okhttp -->
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>retrofit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>converter-jackson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+		</dependency>
+
+		<!--kafka-->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+		</dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

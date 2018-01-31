@@ -36,5 +36,7 @@ public class DemoService {
       return demoDao.getB1ById(id);
   }
 
-
+    public String getB2(Long id){
+        return id+"==";
+    }
 }

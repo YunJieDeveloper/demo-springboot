@@ -13,12 +13,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.*;
+import org.springframework.core.env.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -32,7 +32,7 @@ import java.util.Map;
 @Configuration  //配置类注解
 @EnableTransactionManagement //spring事务
 @ConditionalOnProperty("demo.mysql.url")
-public class DaoConfiguration {
+public  class DaoConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(DaoConfiguration.class);
     private Map<String, Object> datasourceMap;
 
