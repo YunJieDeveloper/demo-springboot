@@ -1,16 +1,15 @@
 package com.example.springboot.demospringbootserver;
 
-import com.example.springboot.DemoSpringbootServerApplication;
-import com.example.springboot.demo.for_learn.JavaMailSenderDemo;
-import com.example.springboot.demo.kafka_demo.ConsumerThreadPool;
+import com.example.springboot.demo.template.JavaMailSenderDemo;
+import com.example.springboot.demo.kafka.consumer.ConsumerThreadPool;
+import com.example.springboot.demo.kafka.consumer.KafkaConsumerExecutorFactory;
 import com.example.springboot.service.DemoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 //import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.mail.MessagingException;
@@ -18,11 +17,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-//RunWith(SpringRunner.class) //1.5.8 若无此注解，@Autowired 无法引入类实例 NullPointerException
-//@SpringBootTest //1.5.8 若无此注解,无法扫描到@Autowired引入的类 NoSuchBeanDefinitionException
-@SpringApplicationConfiguration(classes = DemoSpringbootServerApplication.class)
-@WebIntegrationTest({"server.port:8282", "service.tag:local"})// 使用0表示端口号随机，也可以具体指定如8888这样的固定端口
+//@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class) //1.5.8 若无此注解，@Autowired 无法引入类实例 NullPointerException
+@SpringBootTest //1.5.8 若无此注解,无法扫描到@Autowired引入的类 NoSuchBeanDefinitionException
+//@SpringApplicationConfiguration(classes = DemoMicroService.class)
+//@WebIntegrationTest({"server.port:8282", "service.tag:local"})// 使用0表示端口号随机，也可以具体指定如8888这样的固定端口
 public class KafkaConsumerTest {
 
 	@Autowired
@@ -30,6 +29,9 @@ public class KafkaConsumerTest {
 
 	@Autowired
 	JavaMailSenderDemo javaMailSenderDemo;
+
+	@Autowired
+	KafkaConsumerExecutorFactory executorFactory;
 
 	@Test
 	public void contextLoads() {
@@ -74,10 +76,12 @@ public class KafkaConsumerTest {
 	 *@Description kafka消费者 必须保证produce生产者处于运行状态，否则consumer消费者就会得不到数据，无法消费
 	 */
 	public void consumer() {
-		String [] topics=new String[]{"group2"};
+		String groupId = "groupId";
+		String[] topic = {"group2"};
+		int numThreads = 3;
 		String bootstrapList="127.0.0.1:9092";
-		ConsumerThreadPool pool =new ConsumerThreadPool("test1234",bootstrapList,topics,2);
-		pool.consume();
+		ConsumerThreadPool consumerThreadPool = new ConsumerThreadPool(executorFactory,bootstrapList, groupId, topic, numThreads);
+		consumerThreadPool.consume();
 	}
 
 

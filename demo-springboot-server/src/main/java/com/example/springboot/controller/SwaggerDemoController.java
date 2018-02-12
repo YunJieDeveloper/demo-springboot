@@ -1,6 +1,6 @@
 package com.example.springboot.controller;
 
-import com.demo.exception.DemoException;
+import com.demo.springboot.exception.DemoException;
 import com.example.springboot.service.DemoService;
 import io.swagger.annotations.*;
 import lombok.Data;

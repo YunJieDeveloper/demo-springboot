@@ -1,7 +1,7 @@
 package com.example.springboot.repository;
 
 
-import com.demo.entity.Bean;
+import com.demo.springboot.entity.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 

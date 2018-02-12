@@ -1,6 +1,6 @@
 package com.example.springboot.demospringbootserver;
 
-import com.example.springboot.demo.for_learn.RedisDemo;
+import com.example.springboot.demo.template.RedisDemo;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

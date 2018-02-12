@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="SSMIntegration:war">
-    <output-path>$PROJECT_DIR$/../SSMIntegration/target</output-path>
-    <root id="archive" name="SSMIntegration.war">
-      <element id="artifact" artifact-name="SSMIntegration:war exploded" />
-    </root>
-  </artifact>
-</component>
