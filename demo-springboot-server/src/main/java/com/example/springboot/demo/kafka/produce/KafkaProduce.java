@@ -82,7 +82,10 @@ public class KafkaProduce {
             //此处使用循环做测试，具体用法按实际生产环境实现
             while (true) {
                 i++;
-                 /**具体的发送消息操作*/
+                 /**
+                  * 具体的发送消息操作
+                  *  key 作为参数属性，无实际用处
+                  * */
                 ProducerRecord<String, String> data = new ProducerRecord(topic, key, value.toString() + i);
                 Future<RecordMetadata> metadataFuture = this.producer.send(data, (metadata, exception) -> {
                     if (exception != null) {

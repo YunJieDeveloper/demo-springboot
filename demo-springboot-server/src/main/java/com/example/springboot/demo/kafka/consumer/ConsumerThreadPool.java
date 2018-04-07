@@ -96,7 +96,7 @@ public class ConsumerThreadPool {
 
                 Map<String, List<String>> messageDataMap = new HashMap<>();
                 for (ConsumerRecord<String, String> record : records) {
-                    /**将消费信息按topic分组，放入messageDataMap中*/
+                     /**将消费信息按topic分组，放入messageDataMap中*/
                     if (!messageDataMap.containsKey(record.topic())) {
                         List<String> messageDataList = new ArrayList<>();
                         messageDataList.add(record.value());

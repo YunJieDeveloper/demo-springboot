@@ -24,7 +24,7 @@ public class FirstMessageExecutor implements MessageExecutor{
         log.debug("开始消费first-topic信息:[{}]", message);
         List<FirstBean> messageData = (List<FirstBean>) message;
         try {
-            /**此处近视具体的service -> dao等一系列操作*/
+            /**此处视具体的service -> dao等一系列操作*/
             // todo firstService.add(messageData);
             return message;
         } catch (Exception e) {

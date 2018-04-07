@@ -18,6 +18,7 @@
         <module>demo-springboot-server</module>
         <module>demo-springboot-common</module>
         <module>demo-springboot-dao</module>
+        <module>client</module>
     </modules>
     <!--统一管理版本号-->
     <properties>
@@ -33,6 +34,7 @@
         <swagger-version>2.6.1</swagger-version>
         <okhttp3.version>3.4.1</okhttp3.version>
         <retrofit2.version>2.1.0</retrofit2.version>
+        <asynchttp.version>1.9.40</asynchttp.version>
     </properties>
 
 
@@ -55,7 +57,11 @@
                 <artifactId>demo-springboot-server</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.demo.springboot</groupId>
+                <artifactId>client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
@@ -134,6 +140,13 @@
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
                 <version>${okhttp3.version}</version>
+            </dependency>
+
+             <!--异步httpclient 与retrofit一样 是http请求框架-->
+            <dependency>
+                <groupId>com.ning</groupId>
+                <artifactId>async-http-client</artifactId>
+                <version>${asynchttp.version}</version>
             </dependency>
 
             <dependency>

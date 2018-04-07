@@ -113,6 +113,11 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--异步httpclient 与retrofit一样 是http请求框架-->
+        <dependency>
+            <groupId>com.ning</groupId>
+            <artifactId>async-http-client</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
