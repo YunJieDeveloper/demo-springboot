@@ -93,7 +93,7 @@
                 <version>${guava.version}</version>
             </dependency>
 
-            <!-- velocity -->
+            <!-- velocity  （spring5以上版本不支持）-->
             <!--    <dependency>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-velocity</artifactId>

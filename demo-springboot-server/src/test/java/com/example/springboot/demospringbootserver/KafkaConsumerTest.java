@@ -27,8 +27,6 @@ public class KafkaConsumerTest {
 	@Autowired
 	DemoService demoService;
 
-	@Autowired
-	JavaMailSenderDemo javaMailSenderDemo;
 
 	@Autowired
 	KafkaConsumerExecutorFactory executorFactory;
@@ -53,22 +51,6 @@ public class KafkaConsumerTest {
 		}
 
 	}
-
-	@Test
-	public void testEmail() {
-		Map<String, Object> maps=null;
-		String subject="";
-		String[] to={"1829546441@qq.com","2519016990@qq.com","1793588856@qq.com","514859324@qq.com"};
-		String html= "<html><head><META http-equiv=Content-Type content='text/html; charset=UTF-8'><title>自动发送邮件测试</title></head><body>亲，这是一封测试邮件，请不要在意，么么哒。<br/><a href='www.baidu.com' >度娘</a><br>快快点击链接去嗨皮一下吧！</body><html>";
-
-		try {
-			javaMailSenderDemo.sendMail("自动发送邮件测试", html,true, to);
-		} catch (MessagingException e) {
-			System.out.println("发送邮件失败！");
-			//e.printStackTrace();
-		}
-	}
-
 
 	@Test
 	/**

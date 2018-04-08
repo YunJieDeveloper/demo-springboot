@@ -8,11 +8,14 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+import java.util.Map;
 
 /***
  * @Date 2017/11/29
@@ -33,6 +36,11 @@ public class JavaMailSenderDemo {
     @Autowired
     Environment env;
 
+
+    @Autowired
+    //thymeleaf 模板引擎
+    private TemplateEngine templateEngine;
+
     /**
      * @param isHtml 是否是html格式(发送html时使用utf-8编码)
      * @throws MessagingException 发送发生了异常
@@ -52,11 +60,9 @@ public class JavaMailSenderDemo {
         } else {
             messageHelper = new MimeMessageHelper(mimeMessage, true);
         }
-        messageHelper.setFrom(env.getProperty("mail.from", String.class, "15939630623@163.com")); // 设置发件人Email
+        messageHelper.setFrom(env.getProperty("mail.from", String.class, "934606199@qq.com")); // 设置发件人Email
         messageHelper.setSubject(subject); // 设置邮件主题
         if (isHtml) {
-            //VelocityEngine velocityEngine = new VelocityEngine();
-            //String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, templateLocation,"UTF-8", model)
             messageHelper.setText(content, true); // 设置邮件主题内容(html格式)
         } else {
             messageHelper.setText(content); // 设置邮件主题内容
@@ -67,12 +73,48 @@ public class JavaMailSenderDemo {
         javaMailSender.send(mimeMessage);
     }
 
+
+    /**
+     * @param subject      邮件主题
+     * @param templateName 前端页面文件名
+     * @param datas        前后台交互的数据
+     * @param isHtml       是否是html格式(发送html时使用utf-8编码)
+     * @throws MessagingException 发送发生了异常
+     * @方法名: sendMail
+     * @参数名：@param to 收件人Email地址
+     * @描述语: 使用模板引擎发送邮件
+     */
+    public void sendMailwithTemplate(String subject, String templateName, Map<String, Object> datas, boolean isHtml, String[] to) throws MessagingException {
+
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+
+        MimeMessageHelper messageHelper = null;
+        if (isHtml) {
+            messageHelper = new MimeMessageHelper(mimeMessage, true, CHARSET_UTF8);
+        } else {
+            messageHelper = new MimeMessageHelper(mimeMessage, true);
+        }
+        messageHelper.setFrom(env.getProperty("mail.from", String.class, "934606199@qq.com"));
+        messageHelper.setSubject(subject);
+
+        // /**spring 5以上版本不支持velocity*/
+        //VelocityEngine velocityEngine = new VelocityEngine();
+        //model：变量参数传递给前端页面
+        //String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "data-verify.vm","UTF-8", model)
+        // 设置邮件主题内容(html格式)
+        messageHelper.setText(buildMessage(templateName, datas), true);
+        messageHelper.setTo(to);
+
+        javaMailSender.send(mimeMessage);
+    }
+
+
     /**
      * 发送邮件 （包含附件）
      *
      * @param subject        主题
      * @param content        内容
-     * @param fileAttachment 附件文件
+     * @param fileAttachment 附件文件(外部文件，譬如C:/myfile/filename)
      * @param isHtml         内容是否是html格式
      * @param to             发送的邮箱地址
      * @throws MessagingException 发送邮件异常（失败）
@@ -104,7 +146,7 @@ public class JavaMailSenderDemo {
      *
      * @param subject           主题
      * @param content           内容
-     * @param classPathResource 附件文件(附加在项目内部时候)
+     * @param classPathResource 附件文件(附加在项目内部时候 resources/filename)
      * @param isHtml            内容是否是html格式
      * @param to                发送的邮箱地址
      * @throws MessagingException
@@ -153,6 +195,16 @@ public class JavaMailSenderDemo {
         javaMailSender.send(mimeMessage);
 
     }
+
+
+    private String buildMessage(String templateName, Map<String, Object> datas) {
+        Context context = new Context();
+        for (Map.Entry<String, Object> entry : datas.entrySet()) {
+            context.setVariable(entry.getKey(), entry.getValue());
+        }
+        return templateEngine.process(templateName, context);
+    }
+
 }
 
 

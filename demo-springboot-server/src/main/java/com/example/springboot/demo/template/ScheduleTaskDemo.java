@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @author zhanghesheng
  * */
 @Component  //开启扫描
-@EnableScheduling //开启对定时任务的支持
+//@EnableScheduling //开启对定时任务的支持
 public class ScheduleTaskDemo {
 
     @Scheduled(fixedRate = 5000) //通过@Scheduled声明该方法是计划任务，使用fixedRate属性每隔固定时间执行
