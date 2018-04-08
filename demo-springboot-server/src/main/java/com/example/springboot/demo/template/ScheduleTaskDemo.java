@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @author zhanghesheng
  * */
 @Component  //开启扫描
+//暂时注释掉，使用时打开
 //@EnableScheduling //开启对定时任务的支持
 public class ScheduleTaskDemo {
 
