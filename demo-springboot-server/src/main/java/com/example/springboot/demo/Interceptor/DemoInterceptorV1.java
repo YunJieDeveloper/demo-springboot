@@ -39,7 +39,6 @@ public class DemoInterceptorV1 implements HandlerInterceptor {
             session.setAttribute("userId", session.getAttribute("userId"));
             return true;
         }
-
     }
 
 

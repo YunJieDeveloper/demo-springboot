@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fd85381-3394-48e3-9a2c-9b6cf060cec7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ecwid_consul_consul_api_1_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_guava_2_8_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_8_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_8_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_8_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_orbitz_consul_consul_client_0_10_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_4_0_b34.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_4_0_b34.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_4_0_b34.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_4_0_b34.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_4_0_b34.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_25_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_22_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_25_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_immutables_value_2_0_16.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_1_5_10_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/controller/ConsulController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/ConsulConfigProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/ConsulReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/SwaggerConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/consul/ConsulService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo-springboot-server/src/test/java/com/example/springboot/demospringbootserver/ConsulReaderTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_example_dao_0_0_1_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_4_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_4_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_4_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_1_5_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_13_10_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_1_10_10_RELEASE.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/pom.xml" afterPath="$PROJECT_DIR$/client/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/pom.xml" afterPath="$PROJECT_DIR$/demo-springboot-server/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/DemoMicroService.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/DemoMicroService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/Interceptor/DemoInterceptorV1.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/Interceptor/DemoInterceptorV1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/GateWayConfiguration.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/GateWayConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/kafka/consumer/ConsumerThreadPool.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/kafka/consumer/ConsumerThreadPool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/template/RestTemplateDemo.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/template/RestTemplateDemo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/template/ScheduleTaskDemo.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/template/ScheduleTaskDemo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/service/MongoDbService.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/service/MongoDbService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/demo-springboot-server/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/test/java/com/example/springboot/demospringbootserver/KafkaConsumerTest.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/test/java/com/example/springboot/demospringbootserver/KafkaConsumerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo-springboot-server/src/test/java/com/example/springboot/demospringbootserver/SimpleTest.java" afterPath="$PROJECT_DIR$/demo-springboot-server/src/test/java/com/example/springboot/demospringbootserver/SimpleTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/demo-springboot-common/target/" />
     <ignored path="$PROJECT_DIR$/demo-springboot-dao/target/" />
@@ -129,7 +79,7 @@
       <file leaf-file-name="SwaggerConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/SwaggerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-92">
+            <state relative-caret-position="-519">
               <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
               <folding />
             </state>
@@ -715,7 +665,7 @@
       <workItem from="1524486744586" duration="704000" />
       <workItem from="1524487547902" duration="1672000" />
       <workItem from="1524489695843" duration="2504000" />
-      <workItem from="1524571851442" duration="6386000" />
+      <workItem from="1524571851442" duration="6679000" />
     </task>
     <servers />
   </component>
@@ -752,7 +702,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82886000" />
+    <option name="totallyTimeSpent" value="83179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="712" extended-state="0" />
@@ -959,6 +909,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="65" column="31" lean-forward="false" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1219,7 +1170,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo-springboot-server/src/main/java/com/example/springboot/demo/config/SwaggerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
+        <state relative-caret-position="-519">
           <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
           <folding />
         </state>

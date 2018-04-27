@@ -113,11 +113,11 @@
         </dependency>
 
         <!--自定义工程测试-->
-      <!--  <dependency>
+        <dependency>
             <groupId>com.example</groupId>
             <artifactId>dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
 
         <!--异步httpclient 与retrofit一样 是http请求框架-->
         <dependency>
