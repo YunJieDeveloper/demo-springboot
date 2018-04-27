@@ -113,17 +113,43 @@
         </dependency>
 
         <!--自定义工程测试-->
-        <dependency>
+      <!--  <dependency>
             <groupId>com.example</groupId>
             <artifactId>dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
 
         <!--异步httpclient 与retrofit一样 是http请求框架-->
         <dependency>
             <groupId>com.ning</groupId>
             <artifactId>async-http-client</artifactId>
         </dependency>
+
+
+        <!-- consul -->
+        <dependency>
+            <groupId>com.orbitz.consul</groupId>
+            <artifactId>consul-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+        </dependency>
+
+        <!--consul 与com.orbitz.consul 二选一-->
+        <dependency>
+            <groupId>com.ecwid.consul</groupId>
+            <artifactId>consul-api</artifactId>
+        </dependency>
+
+
+        <!--健康检查-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>

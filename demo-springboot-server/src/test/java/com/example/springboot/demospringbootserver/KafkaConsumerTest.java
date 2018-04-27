@@ -24,48 +24,47 @@ import java.util.Map;
 //@WebIntegrationTest({"server.port:8282", "service.tag:local"})// 使用0表示端口号随机，也可以具体指定如8888这样的固定端口
 public class KafkaConsumerTest {
 
-	@Autowired
-	DemoService demoService;
+    @Autowired
+    DemoService demoService;
 
 
-	@Autowired
-	KafkaConsumerExecutorFactory executorFactory;
+    @Autowired
+    KafkaConsumerExecutorFactory executorFactory;
 
-	@Test
-	public void contextLoads() {
-		teststr("a",null);
-	}
+    @Test
+    public void contextLoads() {
+        teststr("a", null);
+    }
 
-	public List<String> teststr(String...arg){
-		return Arrays.asList(arg);
-	}
+    public List<String> teststr(String... arg) {
+        return Arrays.asList(arg);
+    }
 
-	@Test
-	public void testService() {
-		try {
-			String b2 = demoService.getB2(1l);
-			System.out.println(b2);
-			Thread.sleep(100*1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+    @Test
+    public void testService() {
+        try {
+            String b2 = demoService.getB2(1l);
+            System.out.println(b2);
+            Thread.sleep(100 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 
-	@Test
-	/**
-	 *@author zhanghesheng
-	 *@Description kafka消费者 必须保证produce生产者处于运行状态，否则consumer消费者就会得不到数据，无法消费
-	 */
-	public void consumer() {
-		String groupId = "groupId";
-		String[] topic = {"group2"};
-		int numThreads = 3;
-		String bootstrapList="127.0.0.1:9092";
-		ConsumerThreadPool consumerThreadPool = new ConsumerThreadPool(executorFactory,bootstrapList, groupId, topic, numThreads);
-		consumerThreadPool.consume();
-	}
-
+    @Test
+    /**
+     *@author zhanghesheng
+     *@Description kafka消费者 必须保证produce生产者处于运行状态，否则consumer消费者就会得不到数据，无法消费
+     */
+    public void consumer() {
+        String groupId = "test1234";
+        String[] topic = {"group2"};
+        int numThreads = 3;
+        String bootstrapList = "127.0.0.1:9092";
+        ConsumerThreadPool consumerThreadPool = new ConsumerThreadPool(executorFactory, bootstrapList, groupId, topic, numThreads);
+        consumerThreadPool.consume();
+    }
 
 
 }

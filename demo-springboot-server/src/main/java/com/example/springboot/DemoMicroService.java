@@ -20,9 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication //相当于@Configuration,@EnableAutoConfiguration,@ComponentScan
 @Slf4j//lombok 启动日志注解
-@Import(value = {DaoConfiguration.class,Demo2Properties.class, RedisConfiguration.class}) //引入配置类,一定要引全
-@EnableSwagger2//启动swagger注解
-@ComponentScan({"com.example"})//扫描引入的其他工程的包名。否则会出现注入失败异常,此注解也可用在配置类上
+//@ComponentScan({"com.example"})//扫描引入的其他工程的包名。否则会出现注入失败异常,此注解也可用在配置类上
 public class DemoMicroService {
 
 	public static void main(String[] args) {
@@ -35,7 +33,7 @@ public class DemoMicroService {
 		SpringApplication springApplication = new SpringApplication(new Object[]{DemoMicroService.class});
 		ApplicationContext act = springApplication.run(args);
         /**启动kafka消费线程*/
-		KafkaConsumerService kafkaMicroService = (KafkaConsumerService) act.getBean("kafkaMicroService");
+		KafkaConsumerService kafkaMicroService = (KafkaConsumerService) act.getBean("kafkaConsumerService");
 		kafkaMicroService.startConsuming();
 
 	}

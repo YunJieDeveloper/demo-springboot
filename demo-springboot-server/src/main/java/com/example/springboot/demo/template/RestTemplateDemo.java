@@ -25,12 +25,12 @@ import java.util.Map;
 public class RestTemplateDemo {
 
     /**cookie方式*/
-    public void postMethodWithCookie(String url,String...args){
+    public void postMethodWithCookie(String url,String...cookieArgs){
         RestTemplate restTemplate =new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         List<String> cookies = new ArrayList<>();
-       if(args!=null){
-           cookies=Arrays.asList(args);
+       if(cookieArgs!=null){
+           cookies=Arrays.asList(cookieArgs);
        }
         headers.put(HttpHeaders.COOKIE,cookies);
         HttpEntity request = new HttpEntity(null, headers);

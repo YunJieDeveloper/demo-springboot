@@ -1,7 +1,7 @@
 package com.example.springboot.demospringbootserver;
 
-import com.example.dao.springMongodb.model.User;
-import com.example.springboot.service.MongoDbService;
+//import com.example.dao.springMongodb.model.User;
+//import com.example.springboot.service.MongoDbService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +10,7 @@ public class SimpleTest extends BaseSpringTest {
     com.example.springboot.demo.template.Test test;
 
      @Autowired
-    MongoDbService mongoDbService;
+  //  MongoDbService mongoDbService;
     @Test
     public void test(){
         String property = test.property();
@@ -18,8 +18,8 @@ public class SimpleTest extends BaseSpringTest {
     }
     @Test
     public void testMongo(){
-        User userByName = mongoDbService.getUserByName("zhangsan");
-        System.out.println(userByName);
+       /* User userByName = mongoDbService.getUserByName("zhangsan");
+        System.out.println(userByName);*/
     }
 
 }

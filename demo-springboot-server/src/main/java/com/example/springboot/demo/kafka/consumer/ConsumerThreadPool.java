@@ -40,7 +40,7 @@ public class ConsumerThreadPool {
         //brokerServer(kafka)ip地址,不需要把所有集群中的地址都写上，可是一个或一部分
         props.put("bootstrap.servers", bootstrapList);
 
-        //设置consumer group name,必须设置
+        //设置consumer group name,必须设置 值随意
         props.put("group.id", groupId);
 
         //enable.auto.commit  true：自动提交偏移量；false：手动提交偏移量
@@ -70,8 +70,8 @@ public class ConsumerThreadPool {
         return consumer;
     }
 
-    public ConsumerThreadPool(final KafkaConsumerExecutorFactory executorFactory, final String groupId, final String bootstrapList,
-                              final String[] topic, final int numThreads) {
+    public ConsumerThreadPool(final KafkaConsumerExecutorFactory executorFactory,  final String bootstrapList,
+                              final String groupId, final String[] topic, final int numThreads) {
         this.executorFactory = executorFactory;
         this.consumer = getConsumer(groupId, bootstrapList);
         this.threadPool = Executors.newFixedThreadPool(numThreads);
@@ -92,10 +92,11 @@ public class ConsumerThreadPool {
                     consumer.close();
                 }
                 //每次取100条信息
-                ConsumerRecords<String, String> records = consumer.poll(10);
+                ConsumerRecords<String, String> records = consumer.poll(1000*20);
 
                 Map<String, List<String>> messageDataMap = new HashMap<>();
                 for (ConsumerRecord<String, String> record : records) {
+                    LOGGER.error("record:[{}]",record);
                      /**将消费信息按topic分组，放入messageDataMap中*/
                     if (!messageDataMap.containsKey(record.topic())) {
                         List<String> messageDataList = new ArrayList<>();
