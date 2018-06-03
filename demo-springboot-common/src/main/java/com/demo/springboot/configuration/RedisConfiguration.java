@@ -8,6 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 import redis.clients.jedis.*;
 
 import javax.validation.constraints.NotNull;
@@ -21,6 +22,10 @@ import java.util.Set;
  * */
 @Configuration
 @ConfigurationProperties(prefix = "demo.redis")
+
+//制定配置文件名，默认application.properties／application.yml／bootstrap.properties／bootstrap.yml
+//主要用作配置自定义文件
+@PropertySource("classpath:application.properties")
 @Data
 public class RedisConfiguration {
 

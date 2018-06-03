@@ -14,11 +14,10 @@ import java.util.concurrent.TimeUnit;
  * @author zhanghesheng
  * */
 @Component  //开启扫描
-//暂时注释掉，使用时打开
-//@EnableScheduling //开启对定时任务的支持
+//@EnableScheduling //开启对定时任务的支持,可以不使用
 public class ScheduleTaskDemo {
 
-    //@Scheduled(fixedRate = 5000) //通过@Scheduled声明该方法是计划任务，使用fixedRate属性每隔固定时间执行
+    @Scheduled(fixedRate = 5000) //通过@Scheduled声明该方法是计划任务，使用fixedRate属性每隔固定时间执行
     public  void reportCurrentTime(){
         try {
             Thread.sleep(3000);
@@ -34,7 +33,7 @@ public class ScheduleTaskDemo {
         System.out.println("在指定时间 "+new DateTime(new Date()).toString("yyyy-MM-dd HH:mm:ss")+" 执行");
     }
 
-    //@Scheduled(fixedDelay = 5000 ) //该定时任务结束后每隔固定时间执行
+    @Scheduled(fixedDelay = 5000 ) //该定时任务结束后每隔固定时间执行
     public void fixDelayExecution(){
         try {
             TimeUnit.SECONDS.sleep(3);

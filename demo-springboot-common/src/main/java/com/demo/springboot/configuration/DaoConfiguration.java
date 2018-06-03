@@ -32,7 +32,7 @@ import java.util.Map;
 
 @Configuration  //配置类注解
 @EnableTransactionManagement //spring事务
-@ConditionalOnProperty("demo.mysql.url")
+@ConditionalOnProperty("demo.mysql.url")//相当于@ConditionalOnProperty(prefix = "demo2.mysql", name = "url" ,matchIfMissing = false)
 @ComponentScan({"com.demo"})
 public  class DaoConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(DaoConfiguration.class);
